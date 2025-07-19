@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/context/auth-context"; // ✅ Import here
+import WhatsAppChat from "@/components/WhatsAppChat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <AuthProvider> {/* ✅ Wrap app here, NOT inside admin layout */}
           <Navbar />
           {children}
+          <WhatsAppChat />
           <Footer />
         </AuthProvider>
       </body>

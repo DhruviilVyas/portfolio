@@ -3,25 +3,25 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Grocery Supply Chain App",
+    title: "Jewellery Chain App",
     description:
       "A full-stack MERN app to streamline grocery supply chains with admin & user dashboards.",
     tech: ["React", "Node.js", "MongoDB", "Express"],
-    link: "https://github.com/ruvilvyas/grocery-app",
+    link: "https://glaemira.vercel.app/",
   },
   {
     title: "Portfolio Website",
     description:
       "Personal portfolio built with Next.js and Tailwind CSS featuring animation and clean UI.",
     tech: ["Next.js", "Tailwind CSS"],
-    link: "https://github.com/ruvilvyas/portfolio",
+    link: "https://cohort-abhayparmar9499s-projects.vercel.app/",
   },
   {
-    title: "DevOps Practice Repo",
+    title: "GurujiEvent Repo",
     description:
       "CI/CD pipeline examples using GitHub Actions and Docker for Node.js apps.",
     tech: ["Docker", "CI/CD", "GitHub Actions"],
-    link: "https://github.com/ruvilvyas/devops-playground",
+    link: "https://gurujievent.vercel.app/",
   },
 ];
 
