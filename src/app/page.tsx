@@ -34,7 +34,7 @@ export default function SelectCriteria() {
 
         {/* Box 2 */}
         <div
-          onClick={() => handleSelect("Interviewer")}
+onClick={() => router.push("/Interviewer")}
           className="bg-blue-500 py-10 px-4 rounded-xl shadow-md text-center font-semibold cursor-pointer transition-transform hover:scale-105 hover:bg-blue-400"
         >
           Interviewer
