@@ -1,4 +1,6 @@
 
+import Image from "next/image";
+
 import React from 'react';
 
 export default function About() {
@@ -11,13 +13,16 @@ export default function About() {
 
         <div className="flex flex-col md:flex-row items-center gap-10">
         
-          <div className="md:w-1/7">
-            <img
-              src="/sani.jpg"
-              alt="Dhruvil Vyas"
-              className="rounded-full w-48 h-48 object-cover border-4 border-indigo-500 mx-auto"
-            />
-          </div>
+        <div className="md:w-1/7">
+  <Image
+      src="/logo.png"
+      alt="Personal logo"
+      className="w-32 h-32 object-contain"
+      width={400}
+      height={200}
+      priority
+    />
+</div>
          
           <div className="md:w-2/3 text-lg text-gray-300 space-y-4">
             <p>

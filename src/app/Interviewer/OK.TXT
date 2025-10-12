@@ -1,0 +1,18 @@
+  {/**Homepage
+ skills-my
+Your projects
+known language
+education
+experience
+certificates-pending
+Contact information
+About page
+
+
+loader
+
+update logo in taskbar
+
+
+?motive-backend,api,hacker,fromtend
+*/}
