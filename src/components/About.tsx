@@ -15,7 +15,7 @@ export default function About() {
         
         <div className="md:w-1/7">
   <Image
-      src="/logo.png"
+      src="/sani2.png"
       alt="Personal logo"
       className="w-32 h-32 object-contain"
       width={400}

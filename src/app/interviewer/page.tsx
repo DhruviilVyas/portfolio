@@ -19,9 +19,10 @@ import {
   SiJavascript, SiTypescript, SiNextdotjs, SiTailwindcss, SiPostgresql, SiMongodb
 } from "react-icons/si";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 // ===================================================================
-// ===== 1. YOUR COMPLETE WHITE THEME DESIGN IN ITS OWN COMPONENT ====
+// ===== 1.  WHITE THEME DESIGN IN ITS OWN COMPONENT ====
 // ===================================================================
 const WhiteThemeComponent = () => {
   
@@ -29,8 +30,10 @@ const WhiteThemeComponent = () => {
   return (
     <main className="bg-gray-50 text-gray-900 min-h-screen"> {/* Added min-h-screen for consistent height */}
     <div className="fixed top-4 left-4 z-50">
-<Image src="/logo.png" alt="Logo" className="w-32 h-32 md:w-24 md:h-24 object-contain"     width={400}
+ <Link href="/">
+ <Image src="/logo.png" alt="Logo" className="w-32 h-32 md:w-24 md:h-24 object-contain"     width={400}
               height={200}/>
+</Link>
 </div>
       {/* ===== HERO SECTION ===== */}
       <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6">
@@ -242,7 +245,7 @@ const WhiteThemeComponent = () => {
           >
             <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white rounded-full shadow-md p-3 z-10">
               <Image
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDnOrvQkEh93ROZS0HPRhQ1p1pTCXKRMIQUw&s"
+                src="/gls.png"
                 alt="GLS University"
                     width={400}
               height={200}
@@ -329,8 +332,8 @@ const WhiteThemeComponent = () => {
             <div className="flex justify-center mb-6">
               <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white rounded-full shadow-md p-3">
                 <Image
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-X6OBPXqOVyUHfe88y19Ykk_HYpnva9ktWKuW41VQR1XoeWhIX3H0aKg&s"
-                  alt="Brahma IT Solution Logo" // Added alt text
+  src="/cyber.png"
+alt="Brahma IT Solution Logo" // Added alt text
                   className="w-16 h-16 object-contain"
                       width={400}
               height={200}
@@ -630,12 +633,20 @@ const DarkThemeComponent = () => {
   return (
     <main className="bg-gray-950 min-h-screen"> {/* Added min-h-screen */}
       {/* ===== HERO & FLOATING CARDS CONTAINER ===== */}
-         <div className=" top-4 left-4 z-50">
-<Image src="/logo.png" alt="Logo" className="w-32 h-32 md:w-24 md:h-24 object-contain"     width={400}
-              height={200} />
-</div>
+       
       <div className="relative">
-        <section className="text-white min-h-screen flex items-center bg-gray-900">
+         
+        <section className="text-white min-h-screen flex items-center bg-gray-900">  <div className="absolute top-6 left-6">
+  <Link href="/">
+    <Image
+      src="/logo.png"
+      alt="Logo"
+      width={400}
+      height={200}
+      className="w-24 h-24 md:w-20 md:h-20 object-contain"
+    />
+    </Link>
+  </div>
           <div className="container mx-auto px-6 md:px-12 text-center md:text-left">
             <div className="flex flex-col md:flex-row items-center justify-between">
 
@@ -673,11 +684,11 @@ const DarkThemeComponent = () => {
               <div className="md:w-1/2 flex justify-center">
                 <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-full flex items-center justify-center overflow-hidden">
                   <Image
-                    src="sani2.png"
+                    src="/sani2.png"
                     alt="Profile"
                     className="w-full h-full object-cover rounded-full"
-                        width={400}
-              height={200}
+                    width={400}
+                    height={200}
                   />
                 </div>
               </div>
@@ -736,7 +747,7 @@ const DarkThemeComponent = () => {
               <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-4 h-4 bg-cyan-400 rounded-full border-4 border-gray-950"></div>
               <div className="w-full md:w-[calc(50%-2rem)] md:ml-auto bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-700">
                 <div className="flex items-center space-x-4 mb-3">
-                  <Image src="https://glsuniversity.ac.in/images/gls-logo-new.png" alt="GLS University Logo" className="h-12 w-12 bg-white rounded-full p-1"     width={400}
+                  <Image src="/gls.png" alt="GLS University Logo" className="h-12 w-12 bg-white rounded-full p-1"     width={400}
               height={200}/>
                   <div>
                     <h3 className="text-xl font-bold">GLS University</h3>
@@ -868,7 +879,7 @@ const DarkThemeComponent = () => {
             >
               <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-full flex items-center justify-center overflow-hidden">
                 <Image
-                  src="sani2.png"
+                  src="/sani2.png"
                   alt="Profile"
                   className="w-full h-full object-cover rounded-full"
                       width={400}

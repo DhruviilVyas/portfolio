@@ -7,6 +7,10 @@ import { AuthProvider } from "@/context/auth-context";
 import WhatsAppChat from "@/components/WhatsAppChat";
 import { Providers } from "@/components/providers";
 
+import { Suspense } from "react";
+import Loader from "@/components/Loader";
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,18 +32,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // ✅ Add suppressHydrationWarning here
     <html lang="en" suppressHydrationWarning>
-            <head>
-        <link rel="icon" href="/favicon.ico" /> {/* <-- Your favicon here */}
+      <head>
+        <link rel="icon" href="/favicon.ico" />
         <title>My Portfolio</title>
       </head>
-
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-gray-950 transition-colors duration-500`}
       >
-        
-        {/* ✅ Pass correct ThemeProvider props */}
+                      <Suspense fallback={<Loader />}>
         <Providers attribute="class" defaultTheme="system" enableSystem>
           <AuthProvider>
             {children}
@@ -47,6 +48,7 @@ export default function RootLayout({
             <Footer />
           </AuthProvider>
         </Providers>
+        </Suspense>
       </body>
     </html>
   );
