@@ -8,6 +8,19 @@ export default function SelectCriteria() {
   const [day, setDay] = useState("");
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  handleResize(); // run once on mount
+  window.addEventListener("resize", handleResize);
+
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
 
   useEffect(() => {
     const days = [
@@ -44,22 +57,24 @@ export default function SelectCriteria() {
       )}
 
       {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-          poster="/bg.png" // optional poster for mobile fallback
-        >
-          <source src="/animation.webm" type="video/webm" />
-          {/* Add mp4 fallback for older browsers */}
-          <source src="/animation.mp4" type="video/mp4" />
-        </video>
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-      </div>
+    {/* Background Video */}
+<div className="absolute inset-0 w-full h-full overflow-hidden">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="w-full h-full object-cover"
+    poster="/bg.png"
+  >
+    <source
+      src={isMobile ? "/mobileBG.mp4" : "/animation.webm"}
+      type="video/mp4"
+    />
+  </video>
+  <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+</div>
+
 
       {/* Logo */}
       <div className="absolute top-4 left-4 md:top-6 md:left-6 z-20">
