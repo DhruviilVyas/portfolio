@@ -8,19 +8,6 @@ export default function SelectCriteria() {
   const [day, setDay] = useState("");
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth < 768);
-  };
-
-  handleResize(); // run once on mount
-  window.addEventListener("resize", handleResize);
-
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
-
 
   useEffect(() => {
     const days = [
@@ -48,32 +35,24 @@ useEffect(() => {
       {/* Loader */}
       {loading && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <img
+          <Image
             src="https://cdn.dribbble.com/users/760347/screenshots/7341673/loading_ps.gif"
             alt="Loading..."
             className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24"
+            height={96}
+            width={96}
           />
         </div>
       )}
 
       {/* Background Video */}
-    {/* Background Video */}
-<div className="absolute inset-0 w-full h-full overflow-hidden">
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="w-full h-full object-cover"
-    poster="/bg.png"
-  >
-    <source
-      src={isMobile ? "/mobileBG.mp4" : "/animation.webm"}
-      type="video/mp4"
-    />
-  </video>
-  <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-</div>
+   <div className="absolute inset-0 w-full h-full overflow-hidden"> <video autoPlay loop muted playsInline className="w-full h-full object-cover" poster="/bg.png" >
+     <source src="/animation.webm" type="video/webm" />
+    {/* Add mp4 fallback for older browsers */}
+     <source src="/animation.mp4" type="video/mp4" /> 
+     </video>
+    {/* Dark Overlay */} <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div> 
+    </div>
 
 
       {/* Logo */}
@@ -165,3 +144,4 @@ useEffect(() => {
     </div>
   );
 }
+ 
